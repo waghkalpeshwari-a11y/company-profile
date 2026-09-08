@@ -331,53 +331,78 @@
     </section>
 <hr>
 <!-- ================= CONTACT ================= -->
-    <section id="contact">
-        <h2 align="center">Contact Us</h2>
-         <table width="80%" align="center" cellpadding="30">
-            <tr>
-                <td width="50%">
-                    <h3>Get In Touch</h3>
-                    <p>
-                        <strong>Company:</strong>
-                        Your Company Pvt. Ltd.
-                    </p>
-                    <p>
-                        <strong>Address:</strong><br>
-                        123 Business Street,<br>
-                        Pune, Maharashtra,<br>
-                        India
-                    </p>
-                    <p>
-                        <strong>Email:</strong>
-                        hello@company.com
-                    </p>
-                    <p>
-                        <strong>Phone:</strong>
-                        +91 98--- -----
-                    </p>
-                </td>
-                <td width="50%">
-                    <form>
-                        <label>Name</label>
-                        <br>
-                        <input type="text" name="name" size="40">
-                        <br><br>
-                        <label>Email</label>
-                        <br>
-                        <input type="email" name="email" size="40">
-                        <br><br>
-                        <label>Message</label>
-                        <br>
-                        <textarea name="message" rows="6" cols="42"></textarea>
-                        <br><br>
-                        <button type="submit">
-                            Send Message
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </table>
-    </section>
+
+<section id="contact">
+
+    <h2 align="center">Contact Us</h2>
+
+    <table width="80%" align="center" cellpadding="30">
+
+        <tr>
+
+            <!-- Contact Information -->
+            <td width="50%">
+
+                <h3>Get In Touch</h3>
+
+                <p>
+                    <strong>Company:</strong>
+                    Your Company Pvt. Ltd.
+                </p>
+
+                <p>
+                    <strong>Address:</strong><br>
+                    123 Business Street,<br>
+                    Pune, Maharashtra,<br>
+                    India
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    hello@company.com
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    +91 98765 43210
+                </p>
+
+            </td>
+
+
+            <!-- Contact Form -->
+            <td width="50%">
+
+                <form onsubmit="sendMessage(event)">
+
+                    <label>Name</label><br>
+                    <input type="text" id="name" required>
+
+                    <br><br>
+
+                    <label>Email</label><br>
+                    <input type="email" id="email" required>
+
+                    <br><br>
+
+                    <label>Message</label><br>
+                    <textarea id="message" rows="6" cols="42" required></textarea>
+
+                    <br><br>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
 <hr>
 <!-- ================= FOOTER ================= -->
 <footer>
@@ -400,5 +425,15 @@
             © 2026 Your Company Pvt. Ltd. All Rights Reserved.
         </p>
     </footer>
+    <script>
+function sendMessage(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    alert("Thank you " + name + "! Your message has been sent.");
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
 </body>
 </html>

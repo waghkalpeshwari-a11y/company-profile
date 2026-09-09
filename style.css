@@ -1,0 +1,722 @@
+/* =========================================================
+   COMPANY PROFILE - MODERN EXTERNAL STYLESHEET
+   Works with the existing HTML structure
+   ========================================================= */
+
+:root {
+    --primary: #6c4df6;
+    --primary-dark: #4d35c8;
+    --secondary: #00b8a9;
+    --dark: #182033;
+    --text: #4b5563;
+    --light-text: #6b7280;
+    --bg: #f7f8fc;
+    --white: #ffffff;
+    --border: #e7e9f2;
+    --shadow: 0 12px 35px rgba(24, 32, 51, 0.09);
+    --shadow-hover: 0 18px 45px rgba(24, 32, 51, 0.15);
+    --radius: 18px;
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(108, 77, 246, 0.08), transparent 30%),
+        var(--bg);
+    line-height: 1.7;
+}
+
+/* ================= GENERAL ================= */
+
+section {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+section > h2,
+section > p {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark);
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 5vw, 4.2rem);
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 18px;
+}
+
+h3 {
+    margin: 12px 0 8px;
+}
+
+p {
+    color: var(--text);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+hr {
+    width: 92%;
+    max-width: 1180px;
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(231, 233, 242, 0.8);
+    box-shadow: 0 5px 25px rgba(24, 32, 51, 0.06);
+}
+
+header table {
+    width: min(1180px, 92%) !important;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+header td {
+    padding: 12px 0;
+}
+
+header svg {
+    width: 145px;
+    height: 53px;
+    display: block;
+    transition: transform var(--transition);
+}
+
+header svg:hover {
+    transform: translateY(-2px);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+nav a:hover {
+    background: rgba(108, 77, 246, 0.1);
+    color: var(--primary);
+}
+
+/* ================= HERO ================= */
+
+#home {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+}
+
+#home table {
+    width: 100% !important;
+    border-collapse: separate;
+}
+
+#home td:first-child {
+    padding-right: 45px;
+}
+
+#home p {
+    max-width: 650px;
+    margin-bottom: 18px;
+}
+
+#home p:last-child a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 13px 24px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), #8c6cff);
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(108, 77, 246, 0.25);
+}
+
+#home p:last-child a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(108, 77, 246, 0.35);
+    color: var(--white);
+}
+
+#home svg {
+    width: min(450px, 100%);
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(24, 32, 51, 0.12));
+    transition: transform var(--transition);
+}
+
+#home svg:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= ABOUT ================= */
+
+#about table {
+    width: 100% !important;
+    border-collapse: separate;
+}
+
+#about td:first-child {
+    padding-right: 45px;
+}
+
+#about svg {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    filter: drop-shadow(0 18px 30px rgba(24, 32, 51, 0.1));
+}
+
+#about h2 {
+    margin-bottom: 22px;
+}
+
+#about h3 {
+    margin-top: 25px;
+    color: var(--primary);
+}
+
+#about p {
+    margin-bottom: 10px;
+}
+
+/* ================= COMPANY HIGHLIGHTS ================= */
+
+section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+    table[border="1"] {
+    width: 100% !important;
+    border: 0 !important;
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+
+section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+    table[border="1"] td {
+    border: 0;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 18px !important;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+    table[border="1"] td:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+}
+
+section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+    table[border="1"] h2 {
+    color: var(--primary);
+    font-size: 2.3rem;
+    margin-bottom: 3px;
+}
+
+/* ================= SERVICES ================= */
+
+#services > p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+#services table {
+    width: 100% !important;
+    border: 0 !important;
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+
+#services td {
+    vertical-align: top;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 24px !important;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+#services td:hover {
+    transform: translateY(-8px);
+    border-color: rgba(108, 77, 246, 0.25);
+    box-shadow: var(--shadow-hover);
+}
+
+#services svg {
+    width: 82px;
+    height: 82px;
+    transition: transform var(--transition);
+}
+
+#services td:hover svg {
+    transform: scale(1.08) rotate(3deg);
+}
+
+#services h3 {
+    font-size: 1.2rem;
+}
+
+#services p {
+    font-size: 0.96rem;
+}
+
+/* ================= WHY CHOOSE US ================= */
+
+#services + br + br + hr + section table {
+    width: 100% !important;
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+
+#services + br + br + hr + section td {
+    width: 50%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px !important;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    vertical-align: top;
+}
+
+#services + br + br + hr + section td:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+#services + br + br + hr + section h3 {
+    color: var(--primary);
+}
+
+/* ================= TEAM ================= */
+
+#team > p {
+    margin-bottom: 25px;
+}
+
+#team table {
+    width: 100% !important;
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+
+#team td {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px 15px !important;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+#team td:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+#team svg {
+    width: 130px;
+    height: 130px;
+    transition: var(--transition);
+}
+
+#team td:hover svg {
+    transform: scale(1.05);
+}
+
+#team h3 {
+    margin-top: 10px;
+}
+
+#team p {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ================= CLIENTS ================= */
+
+#team + hr + section table {
+    width: 100% !important;
+    border-collapse: separate;
+    border-spacing: 14px;
+}
+
+#team + hr + section td {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px !important;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+#team + hr + section td:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+#team + hr + section strong {
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+
+/* ================= CONTACT ================= */
+
+#contact {
+    padding-bottom: 90px;
+}
+
+#contact table {
+    width: 100% !important;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border-collapse: separate;
+    overflow: hidden;
+}
+
+#contact td {
+    padding: 45px !important;
+    vertical-align: top;
+}
+
+#contact td:first-child {
+    background: linear-gradient(145deg, #f0edff, #ffffff);
+}
+
+#contact h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    margin-bottom: 17px;
+}
+
+#contact strong {
+    color: var(--dark);
+}
+
+#contact form {
+    width: 100%;
+}
+
+#contact label {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: #fbfbfe;
+    color: var(--dark);
+    font: inherit;
+    transition: var(--transition);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(108, 77, 246, 0.1);
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+#contact button {
+    border: 0;
+    padding: 13px 25px;
+    border-radius: 11px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), #8c6cff);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 9px 20px rgba(108, 77, 246, 0.25);
+    transition: var(--transition);
+}
+
+#contact button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 25px rgba(108, 77, 246, 0.35);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 45px 4% 25px;
+    background: var(--dark);
+    color: #d8dbea;
+}
+
+footer table {
+    width: min(1180px, 100%) !important;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+footer h3 {
+    color: var(--white);
+}
+
+footer p {
+    color: #b8bfd2;
+}
+
+footer a {
+    color: #d8dbea;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+footer > p {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 900px) {
+    section {
+        padding: 60px 0;
+    }
+
+    #home table,
+    #about table,
+    #contact table {
+        display: block;
+    }
+
+    #home tr,
+    #about tr,
+    #contact tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home td,
+    #about td,
+    #contact td {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #home td:first-child,
+    #about td:first-child {
+        padding-right: 0;
+    }
+
+    #home p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about td:last-child {
+        text-align: left;
+    }
+
+    #home svg {
+        margin-top: 25px;
+    }
+
+    #services table,
+    #team table {
+        border-spacing: 10px;
+    }
+
+    #services td {
+        padding: 24px 16px !important;
+    }
+
+    #contact td {
+        padding: 30px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    header table {
+        display: block;
+    }
+
+    header tr {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    header td {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 7px 9px;
+        font-size: 0.9rem;
+    }
+
+    #home {
+        min-height: auto;
+    }
+
+    section {
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    /* Stack table-based cards on small screens */
+    #services tr,
+    #team tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #services td,
+    #team td {
+        width: 100% !important;
+        margin-bottom: 12px;
+    }
+
+    #services table,
+    #team table {
+        border-spacing: 0;
+    }
+
+    #services td {
+        text-align: center;
+    }
+
+    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+        table[border="1"] tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+        table[border="1"] {
+        border-spacing: 0;
+    }
+
+    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+        table[border="1"] td {
+        margin-bottom: 12px;
+    }
+
+    #services + br + br + hr + section table tr,
+    #team + hr + section table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #services + br + br + hr + section td,
+    #team + hr + section td {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    footer table,
+    footer tr,
+    footer td {
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    footer td {
+        padding: 10px 0;
+    }
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(108, 77, 246, 0.35);
+    outline-offset: 3px;
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

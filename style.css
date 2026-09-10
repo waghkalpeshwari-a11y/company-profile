@@ -1,6 +1,6 @@
 /* =========================================================
-   COMPANY PROFILE - MODERN EXTERNAL STYLESHEET
-   Works with the existing HTML structure
+   COMPANY PROFILE - FULLY RESPONSIVE CSS
+   Desktop + Tablet + Mobile
    ========================================================= */
 
 :root {
@@ -19,6 +19,10 @@
     --transition: 0.3s ease;
 }
 
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,28 +31,26 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at top left, rgba(108, 77, 246, 0.08), transparent 30%),
+        radial-gradient(
+            circle at top left,
+            rgba(108, 77, 246, 0.08),
+            transparent 30%
+        ),
         var(--bg);
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* ================= GENERAL ================= */
-
-section {
-    width: min(1180px, 92%);
-    margin: 0 auto;
-    padding: 80px 0;
-}
-
-section > h2,
-section > p {
-    text-align: center;
+img,
+svg {
+    max-width: 100%;
 }
 
 h1,
@@ -59,7 +61,7 @@ h3 {
 }
 
 h1 {
-    font-size: clamp(2.3rem, 5vw, 4.2rem);
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
     letter-spacing: -1.5px;
     margin-bottom: 22px;
 }
@@ -88,20 +90,37 @@ a:hover {
 }
 
 hr {
-    width: 92%;
-    max-width: 1180px;
+    width: min(1180px, 92%);
     margin: 0 auto;
     border: 0;
     border-top: 1px solid var(--border);
 }
 
-/* ================= HEADER ================= */
+/* =========================================================
+   COMMON SECTION
+   ========================================================= */
+
+section {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+section > h2,
+section > p {
+    text-align: center;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(231, 233, 242, 0.8);
     box-shadow: 0 5px 25px rgba(24, 32, 51, 0.06);
@@ -115,13 +134,14 @@ header table {
 
 header td {
     padding: 12px 0;
+    vertical-align: middle;
 }
 
 header svg {
     width: 145px;
     height: 53px;
     display: block;
-    transition: transform var(--transition);
+    transition: var(--transition);
 }
 
 header svg:hover {
@@ -132,7 +152,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     flex-wrap: wrap;
 }
 
@@ -149,7 +169,9 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 #home {
     min-height: 650px;
@@ -159,7 +181,11 @@ nav a:hover {
 
 #home table {
     width: 100% !important;
-    border-collapse: separate;
+    border-collapse: collapse;
+}
+
+#home td {
+    vertical-align: middle;
 }
 
 #home td:first-child {
@@ -176,7 +202,11 @@ nav a:hover {
     margin-top: 8px;
     padding: 13px 24px;
     color: var(--white);
-    background: linear-gradient(135deg, var(--primary), #8c6cff);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #8c6cff
+    );
     border-radius: 12px;
     font-weight: 700;
     box-shadow: 0 10px 25px rgba(108, 77, 246, 0.25);
@@ -184,26 +214,34 @@ nav a:hover {
 
 #home p:last-child a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(108, 77, 246, 0.35);
     color: var(--white);
+    box-shadow: 0 15px 30px rgba(108, 77, 246, 0.35);
 }
 
 #home svg {
     width: min(450px, 100%);
     height: auto;
-    filter: drop-shadow(0 20px 30px rgba(24, 32, 51, 0.12));
-    transition: transform var(--transition);
+    filter: drop-shadow(
+        0 20px 30px rgba(24, 32, 51, 0.12)
+    );
+    transition: var(--transition);
 }
 
 #home svg:hover {
     transform: translateY(-8px);
 }
 
-/* ================= ABOUT ================= */
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 #about table {
     width: 100% !important;
-    border-collapse: separate;
+    border-collapse: collapse;
+}
+
+#about td {
+    vertical-align: middle;
 }
 
 #about td:first-child {
@@ -211,10 +249,11 @@ nav a:hover {
 }
 
 #about svg {
-    max-width: 100%;
+    width: min(400px, 100%);
     height: auto;
-    border-radius: var(--radius);
-    filter: drop-shadow(0 18px 30px rgba(24, 32, 51, 0.1));
+    filter: drop-shadow(
+        0 18px 30px rgba(24, 32, 51, 0.1)
+    );
 }
 
 #about h2 {
@@ -230,7 +269,9 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* ================= COMPANY HIGHLIGHTS ================= */
+/* =========================================================
+   COMPANY HIGHLIGHTS
+   ========================================================= */
 
 section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     table[border="1"] {
@@ -263,7 +304,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     margin-bottom: 3px;
 }
 
-/* ================= SERVICES ================= */
+/* =========================================================
+   SERVICES
+   ========================================================= */
 
 #services > p {
     max-width: 700px;
@@ -296,7 +339,7 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
 #services svg {
     width: 82px;
     height: 82px;
-    transition: transform var(--transition);
+    transition: var(--transition);
 }
 
 #services td:hover svg {
@@ -311,7 +354,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     font-size: 0.96rem;
 }
 
-/* ================= WHY CHOOSE US ================= */
+/* =========================================================
+   WHY CHOOSE US
+   ========================================================= */
 
 #services + br + br + hr + section table {
     width: 100% !important;
@@ -339,7 +384,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     color: var(--primary);
 }
 
-/* ================= TEAM ================= */
+/* =========================================================
+   TEAM
+   ========================================================= */
 
 #team > p {
     margin-bottom: 25px;
@@ -384,7 +431,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     font-weight: 600;
 }
 
-/* ================= CLIENTS ================= */
+/* =========================================================
+   CLIENTS
+   ========================================================= */
 
 #team + hr + section table {
     width: 100% !important;
@@ -411,7 +460,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     letter-spacing: 1px;
 }
 
-/* ================= CONTACT ================= */
+/* =========================================================
+   CONTACT
+   ========================================================= */
 
 #contact {
     padding-bottom: 90px;
@@ -432,7 +483,11 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
 }
 
 #contact td:first-child {
-    background: linear-gradient(145deg, #f0edff, #ffffff);
+    background: linear-gradient(
+        145deg,
+        #f0edff,
+        #ffffff
+    );
 }
 
 #contact h3 {
@@ -476,7 +531,8 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
 #contact textarea:focus {
     border-color: var(--primary);
     background: var(--white);
-    box-shadow: 0 0 0 4px rgba(108, 77, 246, 0.1);
+    box-shadow:
+        0 0 0 4px rgba(108, 77, 246, 0.1);
 }
 
 #contact textarea {
@@ -489,7 +545,11 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     padding: 13px 25px;
     border-radius: 11px;
     color: var(--white);
-    background: linear-gradient(135deg, var(--primary), #8c6cff);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #8c6cff
+    );
     font: inherit;
     font-weight: 700;
     cursor: pointer;
@@ -502,7 +562,9 @@ section:not(#home):not(#about):not(#services):not(#team):not(#contact)
     box-shadow: 0 13px 25px rgba(108, 77, 246, 0.35);
 }
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
     padding: 45px 4% 25px;
@@ -536,39 +598,197 @@ footer a:hover {
 footer > p {
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+/* =========================================================
+   TABLET - 900px
+   ========================================================= */
 
 @media (max-width: 900px) {
+
     section {
-        padding: 60px 0;
+        width: 90%;
+        padding: 65px 0;
+    }
+
+    /* Header */
+    header table {
+        width: 92% !important;
+    }
+
+    header td {
+        padding: 10px 0;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+
+    /* Hero */
+    #home {
+        min-height: auto;
     }
 
     #home table,
     #about table,
     #contact table {
-        display: block;
-    }
-
-    #home tr,
-    #about tr,
-    #contact tr {
-        display: flex;
-        flex-direction: column;
+        width: 100% !important;
     }
 
     #home td,
-    #about td,
-    #contact td {
-        width: 100% !important;
-        text-align: center;
+    #about td {
+        vertical-align: middle;
     }
 
     #home td:first-child,
     #about td:first-child {
-        padding-right: 0;
+        padding-right: 25px;
+    }
+
+    #home h1 {
+        font-size: clamp(2.1rem, 5vw, 3.2rem);
+    }
+
+    #home svg {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #about svg {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    /* Services */
+    #services td {
+        padding: 24px 18px !important;
+    }
+
+    /* Team */
+    #team td {
+        padding: 20px 10px !important;
+    }
+
+    #team svg {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Contact */
+    #contact td {
+        padding: 30px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE - 650px
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    section {
+        width: 92%;
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 2.15rem;
+        letter-spacing: -0.8px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    header table,
+    header tbody,
+    header tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    header tr {
+        padding: 10px 0;
+    }
+
+    header td {
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 5px 0;
+    }
+
+    header svg {
+        width: 125px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 3px;
+    }
+
+    nav a {
+        padding: 6px 8px;
+        font-size: 0.82rem;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    #home {
+        min-height: auto;
+        display: block;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    #home table,
+    #home tbody,
+    #home tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #home tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home td {
+        display: block;
+        width: 100% !important;
+        text-align: center;
+        padding: 0 !important;
+    }
+
+    #home td:first-child {
+        order: 1;
+    }
+
+    #home td:last-child {
+        order: 2;
+        margin-top: 35px;
     }
 
     #home p {
@@ -576,90 +796,60 @@ footer > p {
         margin-right: auto;
     }
 
-    #about td:last-child {
-        text-align: left;
+    #home p:last-child a {
+        width: auto;
+        padding: 12px 20px;
     }
 
     #home svg {
-        margin-top: 25px;
+        width: 100%;
+        max-width: 400px;
     }
 
-    #services table,
-    #team table {
-        border-spacing: 10px;
-    }
+    /* =====================================================
+       ABOUT
+       ===================================================== */
 
-    #services td {
-        padding: 24px 16px !important;
-    }
-
-    #contact td {
-        padding: 30px !important;
-    }
-}
-
-@media (max-width: 650px) {
-    header table {
+    #about table,
+    #about tbody,
+    #about tr {
         display: block;
-    }
-
-    header tr {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-
-    header td {
         width: 100% !important;
-        text-align: center !important;
     }
 
-    nav {
-        justify-content: center;
-    }
-
-    nav a {
-        padding: 7px 9px;
-        font-size: 0.9rem;
-    }
-
-    #home {
-        min-height: auto;
-    }
-
-    section {
-        width: 90%;
-        padding: 50px 0;
-    }
-
-    /* Stack table-based cards on small screens */
-    #services tr,
-    #team tr {
+    #about tr {
         display: flex;
         flex-direction: column;
     }
 
-    #services td,
-    #team td {
+    #about td {
+        display: block;
         width: 100% !important;
-        margin-bottom: 12px;
+        padding: 0 !important;
     }
 
-    #services table,
-    #team table {
-        border-spacing: 0;
+    #about td:first-child {
+        order: 1;
+        margin-bottom: 35px;
     }
 
-    #services td {
+    #about td:last-child {
+        order: 2;
         text-align: center;
     }
 
-    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
-        table[border="1"] tr {
-        display: flex;
-        flex-direction: column;
+    #about svg {
+        width: 100%;
+        max-width: 360px;
     }
+
+    #about h3 {
+        margin-top: 22px;
+    }
+
+    /* =====================================================
+       COMPANY HIGHLIGHTS
+       ===================================================== */
 
     section:not(#home):not(#about):not(#services):not(#team):not(#contact)
         table[border="1"] {
@@ -667,23 +857,170 @@ footer > p {
     }
 
     section:not(#home):not(#about):not(#services):not(#team):not(#contact)
-        table[border="1"] td {
-        margin-bottom: 12px;
+        table[border="1"] tbody,
+    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+        table[border="1"] tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
-    #services + br + br + hr + section table tr,
-    #team + hr + section table tr {
+    section:not(#home):not(#about):not(#services):not(#team):not(#contact)
+        table[border="1"] td {
+        width: 100%;
+        margin-bottom: 14px;
+        padding: 25px 15px !important;
+    }
+
+    /* =====================================================
+       SERVICES
+       ===================================================== */
+
+    #services table,
+    #services tbody,
+    #services tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #services tr {
         display: flex;
         flex-direction: column;
     }
 
-    #services + br + br + hr + section td,
+    #services td {
+        width: 100% !important;
+        margin-bottom: 15px;
+        padding: 25px 20px !important;
+        text-align: center;
+    }
+
+    #services svg {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* =====================================================
+       WHY CHOOSE US
+       ===================================================== */
+
+    #services + br + br + hr + section table,
+    #services + br + br + hr + section tbody,
+    #services + br + br + hr + section tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #services + br + br + hr + section tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #services + br + br + hr + section td {
+        width: 100% !important;
+        margin-bottom: 15px;
+        padding: 22px !important;
+    }
+
+    /* =====================================================
+       TEAM
+       ===================================================== */
+
+    #team table,
+    #team tbody,
+    #team tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #team tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #team td {
+        width: 100% !important;
+        margin-bottom: 15px;
+        padding: 25px 15px !important;
+    }
+
+    #team svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* =====================================================
+       CLIENTS
+       ===================================================== */
+
+    #team + hr + section table,
+    #team + hr + section tbody,
+    #team + hr + section tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #team + hr + section tr {
+        display: flex;
+        flex-direction: column;
+    }
+
     #team + hr + section td {
-        width: 100%;
+        width: 100% !important;
         margin-bottom: 12px;
     }
 
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    #contact {
+        padding-bottom: 60px;
+    }
+
+    #contact table,
+    #contact tbody,
+    #contact tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    #contact tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact td {
+        display: block;
+        width: 100% !important;
+        padding: 28px 22px !important;
+        text-align: left;
+    }
+
+    #contact td:first-child {
+        border-radius: 24px 24px 0 0;
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 16px;
+    }
+
+    #contact button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        padding: 35px 5% 20px;
+    }
+
     footer table,
+    footer tbody,
     footer tr,
     footer td {
         display: block;
@@ -692,11 +1029,60 @@ footer > p {
     }
 
     footer td {
-        padding: 10px 0;
+        padding: 8px 0;
+    }
+
+    footer > p {
+        font-size: 0.85rem;
     }
 }
 
-/* ================= ACCESSIBILITY ================= */
+/* =========================================================
+   VERY SMALL PHONES - 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    section {
+        width: 94%;
+        padding: 42px 0;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        padding: 5px 6px;
+        font-size: 0.75rem;
+    }
+
+    #home svg {
+        max-width: 100%;
+    }
+
+    #contact td {
+        padding: 24px 18px !important;
+    }
+
+    #services td,
+    #team td {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
 a:focus-visible,
 button:focus-visible,
@@ -706,9 +1092,12 @@ textarea:focus-visible {
     outline-offset: 3px;
 }
 
-/* ================= REDUCED MOTION ================= */
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
